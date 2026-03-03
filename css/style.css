@@ -20,12 +20,17 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text-main);
     background-color: var(--bg-white);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 h1,
@@ -178,7 +183,7 @@ ul {
 }
 
 .logo-img {
-    height: 110px;
+    height: 85px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -487,6 +492,42 @@ ul {
     box-shadow: 0 8px 25px rgba(0, 31, 63, 0.15);
 }
 
+/* ── Phone Links ── */
+.contact-phones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.contact-phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-main);
+    background: var(--bg-light);
+    border: 1px solid #e1e8ed;
+    border-radius: 50px;
+    padding: 10px 24px;
+    transition: var(--transition);
+}
+
+.contact-phone-link i {
+    color: var(--accent-color);
+}
+
+.contact-phone-link:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 31, 63, 0.1);
+}
+
 .contact-email-btn {
     display: inline-flex;
     align-items: center;
@@ -689,5 +730,38 @@ ul {
 
     .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile Fixes for Added content */
+    .logo-img {
+        height: 60px;
+        /* Limit huge logo height on phones */
+    }
+
+    .contact-email-inner {
+        padding: 40px 20px 30px;
+    }
+
+    .contact-email-link {
+        font-size: 1.05rem;
+        padding: 12px 20px;
+        word-break: break-all;
+    }
+
+    .contact-phone-link {
+        font-size: 1rem;
+        padding: 10px 18px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-phones {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .contact-meta {
+        padding: 15px 10px;
     }
 }
